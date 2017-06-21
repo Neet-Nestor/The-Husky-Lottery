@@ -23,9 +23,26 @@
         <div class='mdl-grid'>
           <div class='mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone'></div>
           <div class='mdl-cell mdl-cell--10-col mdl-cell--12-col-tablet mdl-cell--12-col-phone'>
-            <button id='btn-go' class='transitive mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'>
-              开始抽取
-            </button>
+           	<div id="settings-card" class="transitive mdl-card mdl-shadow--2dp">
+            	<div class='mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone'></div>
+					<div id="settings">
+						<div id="number-panel">
+							<label for="number" class="labels">抽取数量：</label>
+							<input id="number" type="number" min="1" value=1 class="setting-input"/>
+						</div>
+						<div id="start-panel">
+							<label for="startNum" class="labels">开始数字：</label>
+							<input id="startNum" type="number" value=0 class="setting-input"/>
+						</div>
+						<div id="end-panel">
+							<label for="endNum" class="labels">结束数字：</label>
+							<input id="endNum" type="number" value=100 class="setting-input"/>
+						</div>
+			  		</div>
+				<button id='btn-go' class='transitive mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'>
+				  开始抽取
+				</button>
+           	</div>
             <br>
             <div id='main-card' class='transitive mdl-card mdl-shadow--2dp'>
               <div id='main-card-caption'>随机抽取中</div>
@@ -68,5 +85,6 @@
       </main>
     </div>
     <script src='./draw.js'></script>
+    <script src='./jquery.min.js'></script>
   </body>
 </html>

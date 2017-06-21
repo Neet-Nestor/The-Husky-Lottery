@@ -1,12 +1,16 @@
 (function (window) {
 	'use strict';
-	var startCode = 7000000;
-	var endCode = 7000999;
-	var length = endCode - startCode + 1;
+	var startCode;
+	var endCode;
+	var length;
 	var time = 4000;
-	var num = 7;
+	var num;
 	
 	window.onload = function() {
+		document.getElementById("settings-card").classList.add('expand');
+	}
+	
+	function initial() {
 		for (var i = 1; i < num; i++) {
 			var numEle = document.createElement("div");
 			numEle.classList.add("year-disp");
@@ -93,7 +97,7 @@
 			var disp_card = document.getElementById('main-card');
 			disp_card.classList.remove('expand');
 			disp_card.classList.add('expand-more');
-			disp_card.style.height = (3 * num + 12) + "em";
+			disp_card.style.height = (3 * num + 9) + "em";
 			document.getElementById('list-card').classList.add('expand');
 			setTimeout(function () {
 				document.getElementById('list-card').classList.remove('expand');
@@ -115,6 +119,7 @@
 			for (var i = 0; i < items.length; i++) {
 				items[i].classList.add("expand");
 			}
+			document.getElementById('btn-half').classList.add('collapse');
 		};
 		
 			
@@ -131,7 +136,7 @@
 				var disp_card = document.getElementById('main-card');
 				disp_card.classList.remove('expand');
 				disp_card.classList.add('expand-more');
-				disp_card.style.height = (3 * num + 12) + "em";
+				disp_card.style.height = (3 * num + 9) + "em";
 				document.getElementById('list-card').classList.add('expand');
 				setTimeout(function () {
 					document.getElementById('list-card').classList.remove('expand');
@@ -167,7 +172,7 @@
 				var disp_card = document.getElementById('main-card');
 				disp_card.classList.remove('expand');
 				disp_card.classList.add('expand-more');
-				disp_card.style.height = (3 * num + 12) + "em";
+				disp_card.style.height = (3 * num + 9) + "em";
 				document.getElementById('list-card').classList.add('expand');
 				setTimeout(function () {
 					document.getElementById('list-card').classList.remove('expand');
@@ -221,17 +226,27 @@
 	
 	
 	document.getElementById('btn-go').onclick = function () {
+		startCode = parseInt(document.getElementById("startNum").value);
+		endCode = parseInt(document.getElementById("endNum").value);
+		length = endCode - startCode + 1;
+		num = parseInt(document.getElementById("number").value);
+		initial();
 		document.getElementById('btn-go').classList.add('collapse');
 		document.getElementById('main-card').classList.add('expand');
+		$('#settings-card').animate({height: '0px'}, 50);
 		document.getElementById("main-card").style.height = (3 * num + 9) + "em";
 		document.getElementById('btn-stop').classList.remove('collapse');
-		document.getElementById('btn-half').classList.remove('collapse');
+		if (num > 1) {
+			document.getElementById('btn-half').classList.remove('collapse');
+		}
 		roll();
 	};
 	document.getElementById('btn-more').onclick = function () {
 		document.getElementById('btn-more').classList.add('collapse');
 		document.getElementById('btn-okay').classList.add('collapse');
-		document.getElementById('btn-half').classList.remove('collapse');
+		if (num > 1) {
+			document.getElementById('btn-half').classList.remove('collapse');
+		}
 		document.getElementById('main-card').classList.remove('expand-more');
 		document.getElementById('main-card').classList.add('expand');
 		document.getElementById("main-card").style.height = (3 * num + 9) + "em";
