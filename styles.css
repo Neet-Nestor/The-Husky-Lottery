@@ -14,7 +14,7 @@ body {
   text-align: center;
 }
 
-#year-disp {
+.year-disp {
   text-align: center;
 }
 
@@ -64,11 +64,11 @@ main {
   line-height: normal;
 }
 #main-card.expand {
-  height: 7em;
+  height: 9em;
   padding: 0.5em;
 }
 #main-card.expand-more {
-  height: 12em;
+  height: auto;
   padding: 0.5em;
 }
 #list-card {
@@ -96,6 +96,7 @@ main {
   padding: 0.25em;
   overflow: hidden;
   font-size: 1.2em;
+  text-align: center;
 }
 .winner-list-item.odd {
   background: #c0c0c0;
@@ -137,7 +138,7 @@ main {
   background-position: center;
 }
 
-#card-buttons {
+#card-buttons, #stop {
   line-height: 0px;
 }
 #btn-more {
@@ -156,7 +157,17 @@ main {
   width: 100%;
   background-color: #4b2e83;
 }
-#btn-more.collapse, #btn-okay.collapse {
+
+#btn-stop {
+  height: 2em;
+  font-size: 1em;
+  margin: 4px;
+  min-height: 0px;
+  width: 100%;
+  background-color: rgba(182, 122, 122, 1);
+}
+
+#btn-more.collapse, #btn-okay.collapse, #btn-stop.collapse {
   height: 0px;
 }
 
@@ -167,4 +178,16 @@ main {
 #prize-card.expand {
   max-height: 2000px;
   padding: 1em;
+}
+#btn-half {
+  height: 2em;
+  font-size: 1em;
+  margin: 4px;
+  min-height: 0px;
+  width: 100%;
+  background-color: #6e974d;
+}
+
+#btn-half.collapse {
+	height: 0em;
 }
