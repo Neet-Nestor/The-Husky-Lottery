@@ -37,24 +37,24 @@
 					  <form class="number_form" action="#">
 						  <label for="number" class="labels">抽取数量：</label>
 						  <div id="number-container" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-							<input id="number" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-							<label class="mdl-textfield__label" for="endNum">Number...</label>
-							<span class="mdl-textfield__error">Input is not a number!</span>
+							<input id="number" class="mdl-textfield__input" type="text" pattern="[1-9][0-9]*">
+							<label class="mdl-textfield__label" for="endNum">Integer...</label>
+							<span class="mdl-textfield__error">Input is not a positive integer!</span>
 						  </div>
 						</form>
 					  <form class="number_form" action="#">
 						  <label for="startNum" class="labels">开始数字：</label>
 						  <div id="start-container" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-							<input id="startNum" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-							<label class="mdl-textfield__label" for="endNum">Number...</label>
+							<input id="startNum" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+							<label class="mdl-textfield__label" for="endNum">Integer...</label>
 							<span class="mdl-textfield__error">Input is not a number!</span>
 						  </div>
 						</form>
 					  <form class="number_form" action="#">
 						  <label for="endNum" class="labels">结束数字：</label>
 						  <div id="end-container" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-							<input id="endNum" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-							<label class="mdl-textfield__label" for="endNum">Number...</label>
+							<input id="endNum" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+							<label class="mdl-textfield__label" for="endNum">Integer...</label>
 							<span class="mdl-textfield__error">Input is not a number!</span>
 						  </div>
 						</form>

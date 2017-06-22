@@ -226,20 +226,22 @@
 	
 	
 	document.getElementById('btn-go').onclick = function () {
-		startCode = parseInt(document.getElementById("startNum").value);
-		endCode = parseInt(document.getElementById("endNum").value);
-		length = endCode - startCode + 1;
 		num = parseInt(document.getElementById("number").value);
-		initial();
-		document.getElementById('btn-go').classList.add('collapse');
-		document.getElementById('main-card').classList.add('expand');
-		$('#settings-card').animate({height: '0px'}, 50);
-		document.getElementById("main-card").style.height = (3 * num + 9) + "em";
-		document.getElementById('btn-stop').classList.remove('collapse');
-		if (num > 1) {
-			document.getElementById('btn-half').classList.remove('collapse');
+		if (num > 0) {
+			startCode = parseInt(document.getElementById("startNum").value);
+			endCode = parseInt(document.getElementById("endNum").value);
+			length = endCode - startCode + 1;
+			initial();
+			document.getElementById('btn-go').classList.add('collapse');
+			document.getElementById('main-card').classList.add('expand');
+			$('#settings-card').animate({height: '0px'}, 50);
+			document.getElementById("main-card").style.height = (3 * num + 9) + "em";
+			document.getElementById('btn-stop').classList.remove('collapse');
+			if (num > 1) {
+				document.getElementById('btn-half').classList.remove('collapse');
+			}
+			roll();
 		}
-		roll();
 	};
 	document.getElementById('btn-more').onclick = function () {
 		document.getElementById('btn-more').classList.add('collapse');
