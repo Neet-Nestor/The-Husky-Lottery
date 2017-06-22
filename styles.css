@@ -42,7 +42,6 @@ main {
 }
 
 #btn-go, #btn-prize {
-  width: 100%;
   height: 2em;
   font-size: 2em;
   margin: 12px 0px;
@@ -203,11 +202,13 @@ main {
 }
 
 #number, #startNum, #endNum {
-	font-size: 1em;
-	width: 5em;
+	font-size: 2em;
+	width: 3em;
+	top: -10px;
 }
 
 label.labels {
+	font-size: 1em;
 	font-weight: bolder;
 }
 
@@ -215,9 +216,38 @@ label.labels {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	height: 2em;
+	height: 5em;
 }
 
 #settings-card.expand {
 	height: auto;
+}
+
+#logo {
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	height: 8em;
+}
+
+#husky {
+	position: fixed;
+	left: -5em;
+	bottom: -5em;
+	height: 30em;
+}
+
+#start-container, #number-container, #end-container {
+	display: inline;
+	width: 5em;
+}
+
+.text-container {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.number_form {
+	display: flex;
+	flex-flow: column nowrap;
 }
