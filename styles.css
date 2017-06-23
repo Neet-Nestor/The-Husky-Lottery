@@ -203,20 +203,20 @@ main {
 
 #number, #startNum, #endNum {
 	font-size: 2em;
-	width: 3em;
 	top: -10px;
 }
 
 label.labels {
 	font-size: 1em;
 	font-weight: bolder;
+	margin-top: 60px;
 }
 
 #settings {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	height: 5em;
+	height: 3em;
 }
 
 #settings-card.expand {
@@ -239,7 +239,7 @@ label.labels {
 
 #start-container, #number-container, #end-container {
 	display: inline;
-	width: 5em;
+	width: 10em;
 }
 
 .text-container {
@@ -250,4 +250,12 @@ label.labels {
 .number_form {
 	display: flex;
 	flex-flow: column nowrap;
+}
+
+.flex-div {
+	display: flex;
+	flex-direction: row;
+}
+#number_label, #start_label, #end_label {
+	margin-top: 25px;
 }

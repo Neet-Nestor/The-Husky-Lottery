@@ -60,12 +60,22 @@
 					if (idxs[i] === last_idxs[i]) {
 						idxs[i] = random();
 					}
+				}
+				for (var i = 0; i < num; i++) {
+					last_idxs[i] = idxs[i];
+				}
+				while (hasDuplicate(idxs)) {	// if the results has duplicates
+					for (var i = 0; i < num; i++) {
+						if (idxs[i] === last_idxs[i]) {
+							idxs[i] = random();
+						}
+					}
 					for (var i = 0; i < num; i++) {
 						last_idxs[i] = idxs[i];
 					}
-					for (var i = 0; i < num; i++) {
-						document.getElementById('year-disp' + i).innerText = idxs[i];
-					}
+				}
+				for (var i = 0; i < num; i++) {
+					document.getElementById('year-disp' + i).innerText = idxs[i];
 				}
 			} else if (roll_progress === 0.5) {
 				// keep half rolling
@@ -77,11 +87,35 @@
 				for (var i = 0; i < Math.ceil(num / 2); i++) {
 					last_idxs[i + Math.floor(num / 2)] = idxs[i + Math.floor(num / 2)];
 				}
+				while (hasDuplicate(idxs)) {	// if the results has duplicates
+					for (var i = 0; i < Math.ceil(num / 2); i++) {
+						if (idxs[i + Math.floor(num / 2)] == last_idxs[i + Math.floor(num / 2)]) {
+							idxs[i + Math.floor(num / 2)] = random();
+						}
+					}
+					for (var i = 0; i < Math.ceil(num / 2); i++) {
+						last_idxs[i + Math.floor(num / 2)] = idxs[i + Math.floor(num / 2)];
+					}
+				}
 				for (var i = 0; i < Math.ceil(num / 2); i++) {
 					document.getElementById('year-disp' + (i + Math.floor(num / 2))).innerText = idxs[i];
 				}
 			}
 		}, 40);
+		
+		function hasDuplicate(ary) {
+			if (ary.length > 1) {
+				var nary = ary.sort(); 
+				for(var i = 0; i < ary.length; i++){ 
+					if (nary[i] === nary[i+1]){ 
+						return true;
+					} 
+				}
+				return false;
+			} else {
+				return false;
+			}
+		}
 		
 		document.getElementById('btn-stop').onclick = function() {
 			roll_progress = 1;
@@ -227,10 +261,11 @@
 	
 	document.getElementById('btn-go').onclick = function () {
 		num = parseInt(document.getElementById("number").value);
-		if (num > 0) {
-			startCode = parseInt(document.getElementById("startNum").value);
-			endCode = parseInt(document.getElementById("endNum").value);
-			length = endCode - startCode + 1;
+		startCode = parseInt(document.getElementById("startNum").value);
+		endCode = parseInt(document.getElementById("endNum").value);
+		length = endCode - startCode + 1;
+		if (num > 0 && endCode > startCode && startCode !== null && isFinite(startCode) && 
+			endCode !== null && isFinite(endCode)) {
 			initial();
 			document.getElementById('btn-go').classList.add('collapse');
 			document.getElementById('main-card').classList.add('expand');
