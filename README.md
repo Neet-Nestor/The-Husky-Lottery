@@ -1,8 +1,11 @@
-# The Voice of UW Lottery
-修改自 hsefz2018 的 https://github.com/hsefz2018/lottery-newyear2017 和 https://github.com/hsefz2018/lottery-newyear2016
+# The Husky Lottery
+
+## 简介
+Neet--Husky抽奖程序
+*修改自 hsefz2018 的 https://github.com/hsefz2018/lottery-newyear2017 和 https://github.com/hsefz2018/lottery-newyear2016 ，以及kaichengyan 的 https://github.com/kaichengyan/TheVoiceLottery
 以下是原程序提供的 README.md
 
-HSEFZ 2016-2017元旦文艺汇演抽奖程序
+>HSEFZ 2016-2017元旦文艺汇演抽奖程序
 
 Chrome Canary (OS X, 57.0) 工作正常
 Safari / Firefox 未测试
