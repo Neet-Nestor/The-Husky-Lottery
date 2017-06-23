@@ -4,7 +4,7 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 
-    <title>UW好声音抽奖系统</title>
+    <title>UWCSSA新生会抽奖系统</title>
 
     <link rel='stylesheet' href='./material.min.css'>
     <script src='./material.min.js'></script>
@@ -23,15 +23,57 @@
         <div class='mdl-grid'>
           <div class='mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone'></div>
           <div class='mdl-cell mdl-cell--10-col mdl-cell--12-col-tablet mdl-cell--12-col-phone'>
-            <button id='btn-go' class='transitive mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'>
-              开始抽取
-            </button>
+           	<div id="settings-card" class="transitive mdl-card mdl-shadow--2dp">
+            	<div class='mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone'></div>
+					<div class="flex-div">
+						<!--<form class="text-container" action="#">
+						  <label for="endNum" class="labels">结束数字：</label>
+						  <div id="end-container" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input id="endNum" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+							<label class="mdl-textfield__label" for="endNum">Number...</label>
+							<span class="mdl-textfield__error">Input is not a number!</span>
+						  </div>
+						</form>-->
+						<div class='mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone'></div>
+						<div id="settings" class='mdl-cell mdl-cell--10-col mdl-cell--12-col-tablet mdl-cell--12-col-phone'>
+							<label for="number" class="labels" id="number_label">抽取数量：</label>
+					  	<form class="number_form" action="#">
+						  <div id="number-container" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input id="number" class="mdl-textfield__input" type="text" pattern="[1-9][0-9]*">
+							<label  id="number_label_inside" class="mdl-textfield__label" for="endNum">Integer</label>
+							<span class="mdl-textfield__error">Input is not a positive integer!</span>
+						  </div>
+						</form>
+					  <label for="startNum" class="labels" id="start_label">开始数字：</label>
+					  <form class="number_form" action="#">
+						  <div id="start-container" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input id="startNum" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+							<label id="start_label_inside" class="mdl-textfield__label" for="endNum">Integer</label>
+							<span class="mdl-textfield__error">Input is not a number!</span>
+						  </div>
+						</form>
+						  <label for="endNum" class="labels" id="end_label">结束数字：</label>
+					  <form class="number_form" action="#">
+						  <div id="end-container" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input id="endNum" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+							<label id="end_label_inside" class="mdl-textfield__label" for="endNum">Integer</label>
+							<span class="mdl-textfield__error">Input is not a number!</span>
+						  </div>
+						</form>
+						</div>
+					  <div class='mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone'></div>
+						  
+			  		</div>
+				<button id='btn-go' class='transitive mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'>
+				  开始抽取
+				</button>
+           	</div>
             <br>
             <div id='main-card' class='transitive mdl-card mdl-shadow--2dp'>
               <div id='main-card-caption'>随机抽取中</div>
               <div id='info-disp' class='mdl-grid'>
                 <div id='numbers-disp' class='mdl-grid mdl-cell mdl-cell--12-col'>
-                  <div id='year-disp' class='transitive mdl-cell mdl-cell--12-col'>????</div>
+                  <div id='year-disp0' class='year-disp transitive mdl-cell mdl-cell--12-col'>????</div>
                   <!--<div id='klass-disp' class='transitive mdl-cell mdl-cell--3-col'>??</div>
                   <div id='num-disp' class='transitive mdl-cell mdl-cell--3-col'>??</div>
                   <div class='mdl-cell mdl-cell--2-col'></div>
@@ -40,8 +82,12 @@
                 <!--<div id='photo-disp' class='mdl-cell mdl-cell--12-col'>
                 </div>-->
               </div>
+              <div id="stop">
+              	<button id='btn-stop' class='transitive collapse mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'>停止</button>
+                <button id='btn-half' class='transitive collapse mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'>停止一半</button>
+              </div>
               <div id='card-buttons'>
-                <button id='btn-more' class='transitive collapse mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'>还有一个</button>
+                <button id='btn-more' class='transitive collapse mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'>继续抽奖</button>
                 <button id='btn-okay' class='transitive collapse mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored'>到此为止</button>
               </div>
             </div>
@@ -53,16 +99,19 @@
             </div>
             <!--<button id='btn-prize' class='transitive collapse mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored'>
               大礼揭晓
-            </button>-->
+            </button>
             <div id='prize-card' class='transitive mdl-card mdl-shadow--2dp'>
               <div id='prize-desc' class='transitive subtitle'>礼物一份！</div>
               <img src='photos/prize.png' width='100%'>
-            </div>
+            </div>-->
           </div>
           <div class='mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone'></div>
         </div>
+        <image id="logo" src="./Logo-all-white.png" alt="Logo"></image>
+        <image id="husky" src="./husky.png" alt="Husky"></image>
       </main>
     </div>
     <script src='./draw.js'></script>
+    <script src='./jquery.min.js'></script>
   </body>
 </html>
