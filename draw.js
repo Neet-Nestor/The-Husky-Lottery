@@ -265,7 +265,7 @@
 		endCode = parseInt(document.getElementById("endNum").value);
 		length = endCode - startCode + 1;
 		if (num > 0 && endCode > startCode && startCode !== null && isFinite(startCode) && 
-			endCode !== null && isFinite(endCode)) {
+			endCode !== null && isFinite(endCode) && length >= num) {
 			initial();
 			document.getElementById('btn-go').classList.add('collapse');
 			document.getElementById('main-card').classList.add('expand');
