@@ -77,12 +77,12 @@ main {
 }
 #list-card.expand {
   margin-top: 12px;
-  max-height: 8em;
+  max-height: 99999em;
   padding: 1em;
 }
 #list-card.expand-more {
   margin-top: 12px;
-  max-height: 35em; /* unset; */
+  max-height: 99999em; /* unset; */
   padding: 1em;
 }
 #winner-list {
