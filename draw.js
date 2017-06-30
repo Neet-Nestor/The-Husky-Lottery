@@ -7,6 +7,9 @@
 	var num;
 	
 	window.onload = function() {
+		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			document.getElementById("logo").style.display = "none";
+		}
 		document.getElementById("settings-card").classList.add('expand');
 	}
 	
@@ -143,7 +146,7 @@
 				item.classList.add('transitive');
 				item.classList.add('winner-list-item');
 				if (winner_list.children.length % 2 === 0) item.classList.add('odd');
-				item.innerHTML = last_idxs[i].toString();
+				item.innerHTML = document.getElementById('year-disp' + i).innerHTML.toString();
 				if (winner_list.children.length === 0)
 					winner_list.appendChild(item);
 				else
@@ -182,7 +185,7 @@
 					item.classList.add('transitive');
 					item.classList.add('winner-list-item');
 					if (winner_list.children.length % 2 === 0) item.classList.add('odd');
-					item.innerHTML = last_idxs[i].toString();
+					item.innerHTML = document.getElementById('year-disp' + i).innerHTML.toString();
 					if (winner_list.children.length === 0)
 						winner_list.appendChild(item);
 					else
@@ -218,7 +221,7 @@
 					item.classList.add('transitive');
 					item.classList.add('winner-list-item');
 					if (winner_list.children.length % 2 === 0) item.classList.add('odd');
-					item.innerHTML = last_idxs[i + Math.floor(num / 2)].toString();
+					item.innerHTML = document.getElementById('year-disp' + (i + Math.floor(num / 2))).innerHTML.toString();
 					if (winner_list.children.length === 0)
 						winner_list.appendChild(item);
 					else

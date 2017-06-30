@@ -29,49 +29,54 @@ GitHub Page: https://github.com/Neet-Nestor/The-Husky-Lottery/
 					<div class='mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone'></div>
 						<div class='mdl-cell mdl-cell--10-col mdl-cell--12-col-tablet mdl-cell--12-col-phone'>
 							<div id="settings-card" class="transitive mdl-card mdl-shadow--2dp">
-								<div class='mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone'></div>
-								<div class="flex-div">
-								<!--<form class="text-container" action="#">
-								<label for="endNum" class="labels">结束数字：</label>
-								<div id="end-container" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="endNum" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
-								<label class="mdl-textfield__label" for="endNum">Number...</label>
-								<span class="mdl-textfield__error">Input is not a number!</span>
+								<div class='mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone'></div>
+								<div class="flex-div mdl-grid">
+									<!--<form class="text-container" action="#">
+									<label for="endNum" class="labels">结束数字：</label>
+									<div id="end-container" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input id="endNum" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+									<label class="mdl-textfield__label" for="endNum">Number...</label>
+									<span class="mdl-textfield__error">Input is not a number!</span>
+									</div>
+									</form>-->
+									<!--<div class='mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone'></div>-->
+									<div id="setting1" class='mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone'>
+										<label for="number" class="labels" id="number_label">抽取数量：</label>
+										<form class="number_form" action="#">
+											<div id="number-container" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input id="number" class="mdl-textfield__input" type="text" pattern="[1-9][0-9]*">
+												<label  id="number_label_inside" class="mdl-textfield__label" for="endNum">抽取数量</label>
+												<span class="mdl-textfield__error">Input is not a positive integer!</span>
+											</div>
+										</form>
+									</div>
+									<div id="setting2" class='mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone'>
+										<label for="startNum" class="labels" id="start_label">开始数字：</label>
+										<form class="number_form" action="#">
+											<div id="start-container" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input id="startNum" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+												<label id="start_label_inside" class="mdl-textfield__label" for="endNum">开始数字</label>
+												<span class="mdl-textfield__error">Input is not a number!</span>
+											</div>
+										</form>
+									</div>
+									<div id="setting3" class='mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone'>
+										<label for="endNum" class="labels" id="end_label">结束数字：</label>
+										<form class="number_form" action="#">
+											<div id="end-container" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input id="endNum" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+												<label id="end_label_inside" class="mdl-textfield__label" for="endNum">结束数字</label>
+												<span class="mdl-textfield__error">Input is not a number!</span>
+											</div>
+										</form>
+									</div>
+									<!--<div class='mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone'></div>-->
 								</div>
-								</form>-->
-								<div class='mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone'></div>
-								<div id="settings" class='mdl-cell mdl-cell--10-col mdl-cell--12-col-tablet mdl-cell--12-col-phone'>
-									<label for="number" class="labels" id="number_label">抽取数量：</label>
-									<form class="number_form" action="#">
-										<div id="number-container" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input id="number" class="mdl-textfield__input" type="text" pattern="[1-9][0-9]*">
-											<label  id="number_label_inside" class="mdl-textfield__label" for="endNum">Integer</label>
-											<span class="mdl-textfield__error">Input is not a positive integer!</span>
-										</div>
-									</form>
-									<label for="startNum" class="labels" id="start_label">开始数字：</label>
-									<form class="number_form" action="#">
-										<div id="start-container" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input id="startNum" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
-											<label id="start_label_inside" class="mdl-textfield__label" for="endNum">Integer</label>
-											<span class="mdl-textfield__error">Input is not a number!</span>
-										</div>
-									</form>
-									<label for="endNum" class="labels" id="end_label">结束数字：</label>
-									<form class="number_form" action="#">
-										<div id="end-container" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-											<input id="endNum" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
-											<label id="end_label_inside" class="mdl-textfield__label" for="endNum">Integer</label>
-											<span class="mdl-textfield__error">Input is not a number!</span>
-										</div>
-									</form>
-								</div>
-								<div class='mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone'></div>
+								<button id='btn-go' class='transitive mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'>
+								开始抽取
+								</button>
 							</div>
-							<button id='btn-go' class='transitive mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'>
-							开始抽取
-							</button>
-						</div>
+					    </div>
 						<br>
 						<div id='main-card' class='transitive mdl-card mdl-shadow--2dp'>
 							<div id='main-card-caption'>随机抽取中</div>
@@ -112,10 +117,11 @@ GitHub Page: https://github.com/Neet-Nestor/The-Husky-Lottery/
 					<div class='mdl-cell mdl-cell--1-col mdl-cell--hide-tablet mdl-cell--hide-phone'></div>
 				</div>
 				<a href="http://students.washington.edu/qiny8/"><image id="logo" src="./Neet.png" alt="Logo"></image></a>
-				<a href="http://uwcssa.org/"><image id="husky" src="./husky.png" alt="Husky"></image></a>
+				<!--<a href="http://uwcssa.org/"><image id="husky" src="./husky.png" alt="Husky"></image></a>-->
 			</main>
 		</div>
-		<script src='./draw.js'></script>
 		<script src='./jquery.min.js'></script>
+		<script src='./testMobile.js'></script>
+		<script src='./draw.js'></script>
 	</body>
 </html>
