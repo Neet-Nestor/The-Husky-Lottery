@@ -1,4 +1,4 @@
-# The Husky Lottery
+﻿# The Husky Lottery
 
 ## 简介
 UWCSSA Husky抽奖程序
@@ -12,7 +12,9 @@ Safari / Firefox 未测试
 双击点开index.html开始抽奖
 P.S：
 Powerpoint内嵌网页可见Live Web插件
-[Demo](http://hsefz2018.github.io/lottery-newyear2017)
+
+## Demo
+[The Husky Lottery](http://students.washington.edu/qiny8/projects/Lottery/)
 
 ## 注意事项
 1. 抽取数量必须为正整数，理论上无上限，但是为了显示请勿同时输入太大的数字
@@ -23,4 +25,4 @@ Powerpoint内嵌网页可见Live Web插件
 1. 在开始抽奖前的界面里加入了输入框，可以让用户自己输入抽取数量，开始数字与结束数字
 2. 修改了停止方式，由计时停止改为按停止按钮停止，并增加了停止按钮与停止一半按钮（第一次的数量向下取整）
 3. 增加了判断指令，使得用户抽取多个数量时不会出现重复结果
-4. 增加了CSSA Logo与Husky Logo
+4. 修改了Logo

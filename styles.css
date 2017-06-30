@@ -226,15 +226,15 @@ label.labels {
 #logo {
 	position: fixed;
 	right: 10px;
-	bottom: 10px;
-	height: 8em;
+	bottom: 14px;
+	height: 16em;
 }
 
 #husky {
 	position: fixed;
-	left: -5em;
-	bottom: -5em;
-	height: 30em;
+	left: 10px;
+	bottom: 14px;
+	height: 16em;
 }
 
 #start-container, #number-container, #end-container {
