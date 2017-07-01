@@ -29,5 +29,5 @@ Powerpoint内嵌网页可见Live Web插件
 5. 修复了使用停止一半时记录的数字和抽到的数字不一致的Bug
 
 ## LICENSE
-Copyright 2017 Yucheng Qin <imba.qxy@gmail.com>
+Copyright 2017 Yucheng Qin <imba.qxy@gmail.com><br />
 Licensed under the Apache License, Version 2.0 (the "License");
