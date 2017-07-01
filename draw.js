@@ -46,6 +46,13 @@
 			sel_years.push(-1);
 			last_idxs.push(0);
 		}
+		/*
+		var preResults = document.querySelectorAll(".winner-list-item");
+		var preResultsInt = Array();
+		for (var i = 0; i < preResults.length; i++) {
+			preResultsInt[i] = parseInt(preResults[i].innerHTML);
+		}
+		*/
 		var timer_id;
 		timer_id = setInterval(function () {
 			var len = length;
@@ -119,7 +126,18 @@
 				return false;
 			}
 		}
-		
+		/*
+		function haveDuplicate(ary1, ary2) {
+			for (var i = 0; i < ary1.length; i++) {
+				for (var j = 0; j < ary2.length; i++) {
+					if (ary1[i] == ary2[i]) {
+						return true;
+					}
+				}
+			}
+			return false;
+		}
+		*/
 		document.getElementById('btn-stop').onclick = function() {
 			roll_progress = 1;
 			for (var i = 0; i < num; i++) {
@@ -269,6 +287,7 @@
 		length = endCode - startCode + 1;
 		if (num > 0 && endCode > startCode && startCode !== null && isFinite(startCode) && 
 			endCode !== null && isFinite(endCode) && length >= num) {
+			$("#danger").animate({height: '0px'}, 200);
 			initial();
 			document.getElementById('btn-go').classList.add('collapse');
 			document.getElementById('main-card').classList.add('expand');
@@ -279,6 +298,15 @@
 				document.getElementById('btn-half').classList.remove('collapse');
 			}
 			roll();
+		} else if (length < num) {
+			document.getElementById("danger").innerHTML = "";
+			var alertFail = document.createElement("div");
+			alertFail.classList.add("alert");
+			alertFail.classList.add("alert-danger");
+			alertFail.innerHTML = "<strong>错误！抽取范围小于抽取数量！</strong>";
+			document.getElementById("danger").appendChild(alertFail);
+			$("#danger").animate({height: '54px'}, 200);
+			// document.getElementById("danger").classList.remove("collapse");
 		}
 	};
 	document.getElementById('btn-more').onclick = function () {
