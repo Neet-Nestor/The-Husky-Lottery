@@ -2,7 +2,7 @@
 
 ## 简介
 UWCSSA Husky抽奖程序
-*修改自 hsefz2018 的 https://github.com/hsefz2018/lottery-newyear2017 和 https://github.com/hsefz2018/lottery-newyear2016 ，以及kaichengyan 的 https://github.com/kaichengyan/TheVoiceLottery
+*修改自 kaichengyan 的 https://github.com/kaichengyan/TheVoiceLottery
 以下是原程序提供的 README.md
 
 >HSEFZ 2016-2017元旦文艺汇演抽奖程序
