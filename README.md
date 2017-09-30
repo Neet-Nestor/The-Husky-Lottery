@@ -2,7 +2,7 @@
 
 ## 简介
 UWCSSA Husky抽奖程序
-*修改自 hsefz2018 的 https://github.com/hsefz2018/lottery-newyear2017 和 https://github.com/hsefz2018/lottery-newyear2016 ，以及kaichengyan 的 https://github.com/kaichengyan/TheVoiceLottery
+*修改自 kaichengyan 的 https://github.com/kaichengyan/TheVoiceLottery
 以下是原程序提供的 README.md
 
 >HSEFZ 2016-2017元旦文艺汇演抽奖程序
@@ -27,3 +27,7 @@ Powerpoint内嵌网页可见Live Web插件
 3. 增加了判断指令，使得用户抽取多个数量时不会出现重复结果
 4. 修改了排版，现在支持移动端使用了
 5. 修复了使用停止一半时记录的数字和抽到的数字不一致的Bug
+
+## LICENSE
+Copyright 2017 Yucheng Qin \<imba.qxy@gmail.com\><br />
+Licensed under the Apache License, Version 2.0 (the "License");
