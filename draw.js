@@ -5,6 +5,7 @@
 	var length;
 	var time = 4000;
 	var num;
+	var winnerList = [];
 	
 	window.onload = function() {
 		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -160,15 +161,21 @@
 			}, 700);  // > 600ms
 			var winner_list = document.getElementById('winner-list');
 			for (var i = 0; i < num; i++) {
-				var item = document.createElement('div');
-				item.classList.add('transitive');
-				item.classList.add('winner-list-item');
-				if (winner_list.children.length % 2 === 0) item.classList.add('odd');
-				item.innerHTML = document.getElementById('year-disp' + i).innerHTML.toString();
-				if (winner_list.children.length === 0)
-					winner_list.appendChild(item);
-				else
-					winner_list.insertBefore(item, winner_list.firstElementChild);
+				var result = parseInt(document.getElementById('year-disp' + i).innerHTML.toString());
+				if (winnerList.includes(result)) {
+					document.getElementById('year-disp' + i).classList.add("duplicate");
+				} else {
+					winnerList.push(result);
+					var item = document.createElement('div');
+					item.classList.add('transitive');
+					item.classList.add('winner-list-item');
+					if (winner_list.children.length % 2 === 0) item.classList.add('odd');
+					item.innerHTML = document.getElementById('year-disp' + i).innerHTML.toString();
+					if (winner_list.children.length === 0)
+						winner_list.appendChild(item);
+					else
+						winner_list.insertBefore(item, winner_list.firstElementChild);
+				}
 			}
 			var items = document.querySelectorAll(".winner-list-item");
 			for (var i = 0; i < items.length; i++) {
@@ -199,15 +206,21 @@
 				}, 700);  // > 600ms
 				var winner_list = document.getElementById('winner-list');
 				for (var i = 0; i < Math.floor(num / 2); i++) {
-					var item = document.createElement('div');
-					item.classList.add('transitive');
-					item.classList.add('winner-list-item');
-					if (winner_list.children.length % 2 === 0) item.classList.add('odd');
-					item.innerHTML = document.getElementById('year-disp' + i).innerHTML.toString();
-					if (winner_list.children.length === 0)
-						winner_list.appendChild(item);
-					else
-						winner_list.insertBefore(item, winner_list.firstElementChild);
+					var result = parseInt(document.getElementById('year-disp' + i).innerHTML.toString());
+					if (winnerList.includes(result)) {
+						document.getElementById('year-disp' + i).classList.add("duplicate");
+					} else {
+						winnerList.push(result);
+						var item = document.createElement('div');
+						item.classList.add('transitive');
+						item.classList.add('winner-list-item');
+						if (winner_list.children.length % 2 === 0) item.classList.add('odd');
+						item.innerHTML = document.getElementById('year-disp' + i).innerHTML.toString();
+						if (winner_list.children.length === 0)
+							winner_list.appendChild(item);
+						else
+							winner_list.insertBefore(item, winner_list.firstElementChild);
+					}
 				}
 				var items = document.querySelectorAll(".winner-list-item");
 				for (var i = 0; i < items.length; i++) {
@@ -235,15 +248,21 @@
 				}, 700);  // > 600ms
 				var winner_list = document.getElementById('winner-list');
 				for (var i = 0; i < Math.ceil(num / 2); i++) {
-					var item = document.createElement('div');
-					item.classList.add('transitive');
-					item.classList.add('winner-list-item');
-					if (winner_list.children.length % 2 === 0) item.classList.add('odd');
-					item.innerHTML = document.getElementById('year-disp' + (i + Math.floor(num / 2))).innerHTML.toString();
-					if (winner_list.children.length === 0)
-						winner_list.appendChild(item);
-					else
-						winner_list.insertBefore(item, winner_list.firstElementChild);
+					var result = parseInt(document.getElementById('year-disp' + (i + Math.floor(num / 2))).innerHTML.toString());
+					if (winnerList.includes(result)) {
+						document.getElementById('year-disp' + (i + Math.floor(num / 2))).classList.add("duplicate");
+					} else {
+						winnerList.push(result);
+						var item = document.createElement('div');
+						item.classList.add('transitive');
+						item.classList.add('winner-list-item');
+						if (winner_list.children.length % 2 === 0) item.classList.add('odd');
+						item.innerHTML = document.getElementById('year-disp' + (i + Math.floor(num / 2))).innerHTML.toString();
+						if (winner_list.children.length === 0)
+							winner_list.appendChild(item);
+						else
+							winner_list.insertBefore(item, winner_list.firstElementChild);
+					}
 				}
 				var items = document.querySelectorAll(".winner-list-item");
 				for (var i = 0; i < items.length; i++) {
@@ -285,6 +304,10 @@
 		startCode = parseInt(document.getElementById("startNum").value);
 		endCode = parseInt(document.getElementById("endNum").value);
 		length = endCode - startCode + 1;
+		var preNums = document.querySelectorAll(".duplicate");
+		for (var i = 0; i < preNums.length; i++) {
+			preNums[i].classList.remove("duplicate");
+		}
 		if (num > 0 && endCode > startCode && startCode !== null && isFinite(startCode) && 
 			endCode !== null && isFinite(endCode) && length >= num) {
 			$("#danger").animate({height: '0px'}, 200);
@@ -310,16 +333,16 @@
 		}
 	};
 	document.getElementById('btn-more').onclick = function () {
+		$('#settings-card').css("height", "auto");
 		document.getElementById('btn-more').classList.add('collapse');
 		document.getElementById('btn-okay').classList.add('collapse');
-		if (num > 1) {
+		/*if (num > 1) {
 			document.getElementById('btn-half').classList.remove('collapse');
-		}
+		}*/
 		document.getElementById('main-card').classList.remove('expand-more');
-		document.getElementById('main-card').classList.add('expand');
-		document.getElementById("main-card").style.height = (3 * num + 9) + "em";
+		document.getElementById("main-card").style.height = 0 + "em";
 		document.getElementById('btn-stop').classList.remove('collapse');
-		roll();
+		document.getElementById('btn-go').classList.remove('collapse');
 	};
 	document.getElementById('btn-okay').onclick = function () {
 		document.getElementById('main-card').classList.remove('expand-more');
