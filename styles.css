@@ -46,7 +46,7 @@ main {
   font-size: 2em;
   margin: 12px 0px;
   background-color: #8c8eb2;
-  color: #000;
+  color: #fff;
 }
 #btn-go.collapse, #btn-prize.collapse {
   height: 0px;
