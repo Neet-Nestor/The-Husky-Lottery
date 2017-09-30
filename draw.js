@@ -315,7 +315,7 @@
 			document.getElementById('btn-go').classList.add('collapse');
 			document.getElementById('main-card').classList.add('expand');
 			$('#settings-card').animate({height: '0px'}, 50);
-			document.getElementById("main-card").style.height = (3 * num + 9) + "em";
+			document.getElementById("main-card").style.height = (3 * num + 7) + "em";
 			document.getElementById('btn-stop').classList.remove('collapse');
 			if (num > 1) {
 				document.getElementById('btn-half').classList.remove('collapse');
