@@ -17,6 +17,7 @@
 	function initial() {
 		for (var i = 1; i < num; i++) {
 			var numEle = document.createElement("div");
+			numEle.setAttribute("id", "year-disp" + i);
 			numEle.classList.add("year-disp");
 			numEle.classList.add("transitive");
 			numEle.classList.add("mdl-cell");
@@ -311,11 +312,15 @@
 		if (num > 0 && endCode > startCode && startCode !== null && isFinite(startCode) && 
 			endCode !== null && isFinite(endCode) && length >= num) {
 			$("#danger").animate({height: '0px'}, 200);
+			var yearDisps = document.querySelectorAll(".year-disp");
+			for (var j = 1; j < yearDisps.length; j++) {
+				document.getElementById("numbers-disp").removeChild(document.getElementById("year-disp" + j));
+			}
 			initial();
 			document.getElementById('btn-go').classList.add('collapse');
 			document.getElementById('main-card').classList.add('expand');
 			$('#settings-card').animate({height: '0px'}, 50);
-			document.getElementById("main-card").style.height = (3 * num + 7) + "em";
+			document.getElementById("main-card").style.height = (3 * num + 9) + "em";
 			document.getElementById('btn-stop').classList.remove('collapse');
 			if (num > 1) {
 				document.getElementById('btn-half').classList.remove('collapse');
