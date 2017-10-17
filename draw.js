@@ -10,6 +10,7 @@
 	window.onload = function() {
 		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 			document.getElementById("logo").style.display = "none";
+			document.getElementById("husky").style.display = "none";
 		}
 		document.getElementById("settings-card").classList.add('expand');
 	}
